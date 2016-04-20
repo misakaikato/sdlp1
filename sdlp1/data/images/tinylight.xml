@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:d7ce12661b75151d6b6dd1671ed19a52$ -->
+<TextureAtlas imagePath="tinylight.png">
+    <SubTexture name="tinylight_blue" x="14" y="26" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_cover" x="2" y="38" width="6" height="6" frameX="-3" frameY="-3" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_green" x="2" y="26" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_perpol" x="14" y="14" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_red" x="2" y="14" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_skyblue" x="14" y="2" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+    <SubTexture name="tinylight_yellow" x="2" y="2" width="10" height="10" frameX="-1" frameY="-1" frameWidth="12" frameHeight="12"/>
+</TextureAtlas>

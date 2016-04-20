@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<resourses name="testxml">
+    <element type="image" name="background" path="data/images/background.png" xml=""/>
+	<element type="image" name="pngtest" path="data/images/pngtest.png" xml=""/>
+	<element type="image" name="foo" path="data/images/foo.png" xml=""/>
+	<element type="image" name="tinylight" path="data/images/tinylight.png" xml="data/images/tinylight.xml"/>
+	<element type="image" name="sellstuff" path="data/images/sellstuff.png" xml="data/images/sellstuff.xml"/>
+	<element type="image" name="bugs" path="data/images/bugs.png" xml="data/images/bugs.xml"/>
+	<element type="image" name="fliptestL" path="data/images/fliptestL.png" xml=""/>
+	<element type="image" name="fliptestR" path="data/images/fliptestR.png" xml=""/>
+	<element type="ttf" name="xingkai" path="data/ttf/STXINGKA.TTF" xml=""/>
+	<element type="ttf" name="heiti" path="data/ttf/simhei.ttf" xml=""/>
+	<element type="music" name="bgm5" path="data/audio/bgm05.ogg" xml=""/>
+	<element type="sound" name="testsound" path="data/audio/base_enter.mp3" xml=""/>
+</resourses>

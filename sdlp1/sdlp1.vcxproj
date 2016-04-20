@@ -71,12 +71,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,10 +93,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2_mixer.lib;SDL2_ttf.lib;vld.lib;SDL2_image.lib;SDL2.lib;SDL2main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -121,10 +127,11 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;SDL2.lib;SDL2main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -146,6 +153,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ZE_Controller.cpp" />
+    <ClCompile Include="ZE_EventDispatcher.cpp" />
+    <ClCompile Include="mygame.cpp" />
+    <ClCompile Include="ZE_Font.cpp" />
+    <ClCompile Include="ZE_Fraps.cpp" />
+    <ClCompile Include="ZE_InputBox.cpp" />
+    <ClCompile Include="ZE_Sound.cpp" />
+    <ClCompile Include="ZE_TextField.cpp" />
+    <ClCompile Include="ZE_TextureContainer.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="ZE_AssetManager.cpp" />
+    <ClCompile Include="ZE_Core.cpp" />
+    <ClCompile Include="ZE_DisplayObject.cpp" />
+    <ClCompile Include="ZE_Error.cpp" />
+    <ClCompile Include="ZE_Event.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ZE_Image.cpp" />
+    <ClCompile Include="ZE_Sprite.cpp" />
+    <ClCompile Include="ZE_Texture.cpp" />
+    <ClCompile Include="ZE_Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="hint.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ZE_Controller.h" />
+    <ClInclude Include="ZE_EventDispatcher.h" />
+    <ClInclude Include="mygame.h" />
+    <ClInclude Include="ZE_Font.h" />
+    <ClInclude Include="ZE_Fraps.h" />
+    <ClInclude Include="ZE_InputBox.h" />
+    <ClInclude Include="ZE_Sound.h" />
+    <ClInclude Include="ZE_TextField.h" />
+    <ClInclude Include="ZE_TextureContainer.h" />
+    <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="ZE_AssetManager.h" />
+    <ClInclude Include="ZE_Core.h" />
+    <ClInclude Include="ZE_DisplayObject.h" />
+    <ClInclude Include="ZE_Error.h" />
+    <ClInclude Include="ZE_Event.h" />
+    <ClInclude Include="ZE_Image.h" />
+    <ClInclude Include="ZE_Sprite.h" />
+    <ClInclude Include="ZE_Texture.h" />
+    <ClInclude Include="ZE_Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
