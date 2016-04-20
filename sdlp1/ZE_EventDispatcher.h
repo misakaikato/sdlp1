@@ -10,7 +10,6 @@ class EventDispatcher
 public:
 	virtual ~EventDispatcher();
 	void addEventListener(SDL_EventType type, function<void(SDL_Event)>);
-	void removeEventListener(SDL_EventType type, function<void(SDL_Event)>);
 	void removeEventListeners(SDL_EventType type);
 	void removeAllEvents();
 };

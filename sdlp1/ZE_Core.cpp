@@ -24,17 +24,6 @@ deque<Controller*> ZE_Controllers;
 //[Goble]系统默认字体
 Font* defaultFont = new Font("default", "simhei.ttf");
 
-void ZeroEngine::addJoyStick(SDL_Event evt)
-{
-	ZE_Controllers.push_back(new Controller(SDL_NumJoysticks() - 1));
-}
-
-void ZeroEngine::removeJoyStick(SDL_Event evt)
-{
-	delete(ZE_Controllers[evt.jdevice.which]);
-	ZE_Controllers.erase(ZE_Controllers.begin() + evt.jdevice.which);
-}
-
 bool ZeroEngine::Init(string Title, int windowWidth, int windowHeight, bool useVSync)
 {
 	bool success = true;
@@ -54,8 +43,19 @@ bool ZeroEngine::Init(string Title, int windowWidth, int windowHeight, bool useV
 	{
 		success = false;
 	}
-	//ZE_stage.addEventListener(SDL_JOYDEVICEADDED, this->addJoyStick);
-	//ZE_stage.addEventListener(SDL_JOYDEVICEREMOVED, this->removeJoyStick);
+
+	function<void(SDL_Event)> addJoyStick = [](SDL_Event evt)->void
+	{
+		ZE_Controllers.push_back(new Controller(SDL_NumJoysticks() - 1));
+	};
+
+	function<void(SDL_Event)> removeJoyStick = [](SDL_Event evt)->void
+	{
+		delete(ZE_Controllers[evt.jdevice.which]);
+		ZE_Controllers.erase(ZE_Controllers.begin() + evt.jdevice.which);
+	};
+	ZE_stage.addEventListener(SDL_JOYDEVICEADDED, addJoyStick);
+	ZE_stage.addEventListener(SDL_JOYDEVICEREMOVED, removeJoyStick);
 
 	return success;
 }

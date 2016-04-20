@@ -8,14 +8,9 @@ void EventDispatcher::addEventListener(SDL_EventType type, function<void(SDL_Eve
 	ZE_eventHandler.addEventFunction(type, this, func);
 }
 
-void EventDispatcher::removeEventListener(SDL_EventType type, function<void(SDL_Event)> func)
-{
-	ZE_eventHandler.removeEventFunction(type, this, func);
-}
-
 void EventDispatcher::removeEventListeners(SDL_EventType type)
 {
-	ZE_eventHandler.removeEventsOfObject(type, this);
+	ZE_eventHandler.removeEventOfObject(type, this);
 }
 
 void EventDispatcher::removeAllEvents()

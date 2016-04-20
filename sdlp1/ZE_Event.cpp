@@ -34,18 +34,7 @@ void Event::addEventFunction(SDL_EventType type, EventDispatcher* signedObject, 
 	AllEvents.push_back(temp);
 }
 
-void Event::removeEventFunction(SDL_EventType type, EventDispatcher* signedObject, function<void(SDL_Event)> func)
-{
-	for (unsigned int i = 0; i < AllEvents.size(); i++)
-	{
-		/*if (type == AllEvents[i].type && signedObject == AllEvents[i].signedObject && func.target == AllEvents[i].func.target)
-		{
-			AllEvents.erase(AllEvents.begin() + i);
-		}*/
-	}
-}
-
-void Event::removeEventsOfObject(SDL_EventType type, EventDispatcher* signedObject)
+void Event::removeEventOfObject(SDL_EventType type, EventDispatcher* signedObject)
 {
 	for (unsigned int i = 0; i < AllEvents.size(); i++)
 	{

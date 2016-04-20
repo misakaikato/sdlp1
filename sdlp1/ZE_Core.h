@@ -69,8 +69,6 @@ public:
 	void Start(Game*);
 
 private:
-	void addJoyStick(SDL_Event evt);
-	void removeJoyStick(SDL_Event evt);
 	//最后渲染在舞台上，显示一些监视变量
 	Fraps fraps;
 	//SDL的初始化方法，该方法的三个参数分别是窗口标题、窗口宽度、窗口高度
