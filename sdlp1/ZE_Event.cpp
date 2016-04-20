@@ -18,14 +18,14 @@ void Event::handleEvent()
 			{
 				if (e.type == AllEvents[i].type)
 				{
-					(*AllEvents[i].func)(e);
+					AllEvents[i].func(e);
 				}
 			}
 		}
 	}
 }
 
-void Event::addEventFunction(SDL_EventType type, EventDispatcher* signedObject, function<void(SDL_Event)>* func)
+void Event::addEventFunction(SDL_EventType type, EventDispatcher* signedObject, function<void(SDL_Event)> func)
 {
 	EventData temp;
 	temp.type = type;
@@ -34,7 +34,7 @@ void Event::addEventFunction(SDL_EventType type, EventDispatcher* signedObject, 
 	AllEvents.push_back(temp);
 }
 
-void Event::removeEventFunction(SDL_EventType type, EventDispatcher* signedObject, function<void(SDL_Event)>* func)
+void Event::removeEventFunction(SDL_EventType type, EventDispatcher* signedObject, function<void(SDL_Event)> func)
 {
 	for (unsigned int i = 0; i < AllEvents.size(); i++)
 	{

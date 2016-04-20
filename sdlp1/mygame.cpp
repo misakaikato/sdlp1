@@ -98,7 +98,7 @@ void mygame::Init()
 		}
 	};
 
-	ZE_stage.addEventListener(SDL_KEYDOWN, &tt);
+	ZE_stage.addEventListener(SDL_KEYDOWN, tt);
 	/*SDL_Event xx;
 	SDL_PollEvent(&xx);
 	tt(xx);*/

@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void EventDispatcher::addEventListener(SDL_EventType type, function<void(SDL_Event)>* func)
+void EventDispatcher::addEventListener(SDL_EventType type, function<void(SDL_Event)> func)
 {
 	ZE_eventHandler.addEventFunction(type, this, func);
 }
 
-void EventDispatcher::removeEventListener(SDL_EventType type, function<void(SDL_Event)>* func)
+void EventDispatcher::removeEventListener(SDL_EventType type, function<void(SDL_Event)> func)
 {
 	ZE_eventHandler.removeEventFunction(type, this, func);
 }

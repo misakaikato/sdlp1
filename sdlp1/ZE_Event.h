@@ -13,8 +13,8 @@ class Event
 {
 public:
 	void handleEvent();
-	void addEventFunction(SDL_EventType type, EventDispatcher*, function<void(SDL_Event)>*);
-	void removeEventFunction(SDL_EventType type, EventDispatcher*, function<void(SDL_Event)>*);
+	void addEventFunction(SDL_EventType type, EventDispatcher*, function<void(SDL_Event)>);
+	void removeEventFunction(SDL_EventType type, EventDispatcher*, function<void(SDL_Event)>);
 	void removeEventsOfObject(SDL_EventType type, EventDispatcher*);
 	void removeAllEventOfObject(EventDispatcher*);
 
